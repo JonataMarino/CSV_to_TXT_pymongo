@@ -1,0 +1,1 @@
+{'Código do Curso': '7034', 'Sigla do Curso': 'ADB', 'Nome do curso': 'Administração', 'Tipo de Graduação': 'Bacharelado', 'Data de Abertura': '2017', 'Turno': 'Noturno', 'Campus': 'Venda Nova do Imigrante', 'Nível': 'Superior\n'}
