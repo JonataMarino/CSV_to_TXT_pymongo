@@ -6,8 +6,8 @@ mycol = mydb["csv_to_txt"]
 
 i = 0
 x = 0
-I = 0
-while i ==0:
+
+while i == 0:
     x = int(input("Digite 1 para adicionar o arquivo CSV à base de dados \nDigite 2 para adicionar arquivos à base de dados"
                   " \nDigite 3 para fazer a leitura no banco de dados e gerar um arquivo txt\n""Digite 4 para apagar todos os "
                   "registros \nDigite 5 para sair\n "))
@@ -16,7 +16,7 @@ while i ==0:
         i = 1
 
     elif x == 1:
-       Rel_C_G = open("I:/logatti/Linguagens de programação/13_04_21/arquivos_csv/RELACAO-DE-CURSOS-DE-GRADUACAO_-_2021.csv", encoding = "utf8")
+       Rel_C_G = open("G:/logatti/Linguagens de programação/13_04_21/arquivos_csv/RELACAO-DE-CURSOS-DE-GRADUACAO_-_2021.csv", encoding = "utf8")
        for lines in Rel_C_G.readlines():
            cols = lines.split(';')
            original_Data = [
@@ -33,7 +33,7 @@ while i ==0:
         "Codigo do Curso" : input("Código do Curso: "),
         "Sigla do Curso" : input("Sigla do Curso: "),
         "Nome do Curso" : input("Nome do Curso: "),
-        ("Tipo de Graduação"): input("Tipo de Graduação: "),
+        "Tipo de Graduação": input("Tipo de Graduação: "),
         "Data de Abertura": input("Data de Abertura: "),
         "Turno" : input("Turno: "),
         "Campus" : input("Campus: "),
@@ -44,12 +44,18 @@ while i ==0:
         print(y.inserted_id)
 
     elif x == 3:
+        dados = []
+        arq = open('G:/logatti/Linguagens de programação/13_04_21/CSV_to_TXT_pymongo/txt/CSV_to_TXT.txt', 'w')
+
         for lines in mycol.find({}, {'_id': 0}):
-            arq = open('I:/logatti/Linguagens de programação/13_04_21/CSV_to_TXT_pymongo/txt/CSV_to_TXT.txt','a')
-            arq.writelines(str(lines) + "\n")
+            dados.append(str(lines) + "\n")
             print(lines)
-            arq.close()
+        arq.writelines(dados)
+        arq.close()
 
     elif x == 4:
         d = mycol.delete_many({})
         print(d.deleted_count, " documentos apagados.")
+
+    else:
+        print("## Escolha uma opção Válida!! ## ")
