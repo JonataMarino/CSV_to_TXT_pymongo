@@ -8,7 +8,7 @@ i = 0
 x = 0
 
 while i == 0:
-    x = int(input("Digite 1 para adicionar o arquivo CSV à base de dados \nDigite 2 para adicionar arquivos à base de dados"
+    x = int(input("Digite 1 para adicionar o arquivo CSV à base de dados \nDigite 2 para adicionar dados manualmente à base de dados"
                   " \nDigite 3 para fazer a leitura no banco de dados e gerar um arquivo txt\n""Digite 4 para apagar todos os "
                   "registros \nDigite 5 para sair\n "))
 
@@ -16,7 +16,7 @@ while i == 0:
         i = 1
 
     elif x == 1:
-       Rel_C_G = open("D:/logatti/Linguagens de programação/13_04_21/arquivos_csv/RELACAO-DE-CURSOS-DE-GRADUACAO_-_2021.csv", encoding = "utf8")
+       Rel_C_G = open("D:/logatti/Linguagens de programação/13_04_21/arquivos_csv/RELACAO-DE-CURSOS-DE-GRADUACAO_-_2021.csv", encoding="utf8")
        for lines in Rel_C_G.readlines():
            cols = lines.split(';')
            original_Data = [
