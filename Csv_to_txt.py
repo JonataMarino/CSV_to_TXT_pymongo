@@ -16,7 +16,7 @@ while i == 0:
         i = 1
 
     elif x == 1:
-       Rel_C_G = open("G:/logatti/Linguagens de programação/13_04_21/arquivos_csv/RELACAO-DE-CURSOS-DE-GRADUACAO_-_2021.csv", encoding = "utf8")
+       Rel_C_G = open("D:/logatti/Linguagens de programação/13_04_21/arquivos_csv/RELACAO-DE-CURSOS-DE-GRADUACAO_-_2021.csv", encoding = "utf8")
        for lines in Rel_C_G.readlines():
            cols = lines.split(';')
            original_Data = [
@@ -45,7 +45,7 @@ while i == 0:
 
     elif x == 3:
         dados = []
-        arq = open('G:/logatti/Linguagens de programação/13_04_21/CSV_to_TXT_pymongo/txt/CSV_to_TXT.txt', 'w')
+        arq = open('D:/logatti/Linguagens de programação/13_04_21/CSV_to_TXT_pymongo/txt/CSV_to_TXT.txt', 'w')
 
         for lines in mycol.find({}, {'_id': 0}):
             dados.append(str(lines) + "\n")
